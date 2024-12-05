@@ -1,0 +1,9 @@
+python-dotenv
+pandas
+pinecone-client
+langchain
+openai
+fastapi
+uvicorn
+python-multipart
+starlette

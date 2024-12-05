@@ -36,42 +36,8 @@ if index_name not in pc.list_indexes().names():
 index = pc.Index(index_name)
 embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
 
-data = pd.DataFrame({
-    "question": [
-        "How can I reset my password?",
-        "What is the return policy?",
-        "How do I track my order?",
-        "Can I cancel my subscription?",
-        "What payment methods are accepted?",
-        "How do I contact customer support?",
-        "What are your shipping times?",
-        "Do you ship internationally?",
-        "How can I update my billing information?",
-        "What are your business hours?",
-        "Is there a warranty on products?",
-        "How do I create an account?",
-        "Where can I find size charts?",
-        "Do you offer gift cards?",
-        "What's your privacy policy?"
-    ],
-    "answer": [
-        "To reset your password, click on 'Forgot Password' on the login page.",
-        "Our return policy allows returns within 30 days of purchase.",
-        "You can track your order using the tracking link sent to your email.",
-        "To cancel your subscription, go to your account settings.",
-        "We accept credit cards, debit cards, and PayPal.",
-        "You can reach customer support via email at support@example.com or call 1-800-123-4567.",
-        "Standard shipping takes 3-5 business days, express shipping is 1-2 business days.",
-        "Yes, we ship to most countries worldwide. Shipping costs vary by location.",
-        "Log into your account, go to 'Payment Methods' and click 'Edit'.",
-        "We're open Monday-Friday, 9am-6pm EST.",
-        "All products come with a 1-year limited warranty against manufacturing defects.",
-        "Click 'Sign Up' at the top right of our homepage and fill out the form.",
-        "Size charts can be found on each product page under 'Size Guide'.",
-        "Gift cards are available for purchase in denominations from $25 to $500.",
-        "Our privacy policy details how we collect and use your data. View it at example.com/privacy."
-    ]
-})
+# Load FAQ data from the text file
+data = pd.read_csv('faqs.txt', sep='\t', header=None, names=['question', 'answer'])
 
 # Upsert data into Pinecone
 questions = data['question'].tolist()

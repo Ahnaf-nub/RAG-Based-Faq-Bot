@@ -1,5 +1,4 @@
 from dotenv import load_dotenv
-import os
 import pandas as pd
 from pinecone import Pinecone, ServerlessSpec
 from langchain.embeddings import OpenAIEmbeddings
@@ -10,6 +9,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from starlette.responses import FileResponse
+import os
 
 load_dotenv()
 

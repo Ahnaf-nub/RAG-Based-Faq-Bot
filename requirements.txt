@@ -1,7 +1,7 @@
 python-dotenv
 pandas
 pinecone-client
-langchain
+langchain-community
 openai
 fastapi
 uvicorn

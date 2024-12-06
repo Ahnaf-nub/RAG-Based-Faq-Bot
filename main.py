@@ -1,9 +1,9 @@
 from dotenv import load_dotenv
 import pandas as pd
 from pinecone import Pinecone, ServerlessSpec
-from langchain.embeddings import OpenAIEmbeddings
-from langchain.chat_models import ChatOpenAI
-from langchain.vectorstores import Pinecone as LangchainPinecone
+from langchain_community.embeddings import OpenAIEmbeddings
+from langchain_community.chat_models import ChatOpenAI
+from langchain_community.vectorstores import Pinecone as LangchainPinecone
 from langchain.chains import RetrievalQA
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
